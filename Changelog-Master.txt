@@ -1,0 +1,103 @@
+
+
+Changelog: VanillaEconomy
+
+
+
+
+Version FUTURE --- 
+
+---Feature Ideas--- (Order of implementation: 
+ -Implement Prompts for paying bounties, and removing bounties. org.bukkit.conversations.
+ -Spigot action bars
+ -Anonymous Bounties
+ -custom mob rewards
+ -Make a "View-As Player" option for administrators. Can only be executed as /sudo (Planned for a later version because of changes to customPlayer)
+ -Make materials Unable to sell if they came from another person (Maybe)
+ -Add sounds for some commands, village trade sounds for sell, etc...
+ -Write Documentation (More towards a final release.)
+
+
+---Planned Fixes/Augmentations---
+
+ -Console implementations of most commands.
+ -Redesign legacy classes to be more readable and run more efficiently. (Pay Command)
+ -Improve Admin Override
+ -Add more settings
+
+
+
+
+
+
+Version 13B --- In Progress.
+ Features---
+   -Added option to make resources gained from /withdraw non-droppable
+   -Scheduled Backup of economy data every 12 hours (Named: ecoDataBACKUP.ser)
+   -Reroute Mob kill rewards as bounty for players. (Toggleable)
+   -Selling blocks is now accepted
+   -Full implementation of a sell all command
+   -More Settings to configure (New Location: plugins/VanillaEconomy/config.yml)
+ Fixes---
+   -Fixed not being able to pay off some bounties. Use /pay bounty <#>
+   -Fixed selling materials when there were two identical ItemStacks.
+   -Redesigned and rewrote legacy classes to be more serviceable
+   -Improved Error Messages.
+ 
+
+
+
+
+Version 12B -- Complete and pushed to bukkit.
+ Features---
+   -Offline Player support.
+   -Removed the /balance command, Use /me instead.
+   -Bounty system has been implemented.
+     -Order/Retract Bounties. List Incoming,Outgoing, and Global Bounties.
+     -Order/Retract bounties on offline players.
+   -Settings file for configuring Buy/Sell Rates of iron, gold, and diamond.
+     -Rates can be changed but must follow a strict format
+     -If the plugin is unable to read custom values, they will be replaced with default values Via github
+     -The default values are recommended, but you may use change them as you wish. 
+   -Introduced /Rates command to display Exchange rates of Materials.
+     -This will display the current rates from the settings file.
+ Fixes---
+   -Withdraw command will now work opposite to how it did previously, Input how much of each material you want instead of the Dollar Amount.
+   -Optimized various operations internally, Plugin should be slightly faster now.
+   -Fixed an issue with Transaction History sometimes generating a blank page with no entries.
+   -Fixed an issue with /me, It can now be executed from console.
+   -Fixed an issue with error message coloring.
+ Under the hood---
+   -Add TransactionManager and MaterialManager to organize operations.
+   -Make Material Preference only one Variable.
+   -Limit Transaction History Size (100 Max) + Total Bounties (15 Max)
+ Known Bugs---
+   -Changing your minecraft username will cause issues with your player profile. This will be addressed soon. 
+   -/sell all is not implemented yet, and instead is rerouted to /sell hand instead. 
+   -When Upgrading to this Version, You will lose all player data (It is a Beta after all).
+     -Unfortunately, I could not avoid this. I am very close to finishing a Data Migration plugin that will solve this isuse. 
+     -For now, you must delete the "EcoData.ser" file found in the root of your server in order to use this plugin. 
+
+Version 1.1.1b --- COMPATIBLE WITH ALL PREVIOUS VERSIONS
+
+ -Added player data Migration, so *hopefully* this will be a drag and drop upgrade and
+    solve the issue of compatibility with future and past versions.
+
+
+
+Version 1.1b --- NOT COMPATIBLE WITH Version: 1.0.1b
+
+-Added a Transaction History feature.
+
+
+
+Version 1.0.1b --- COMPATIBLE WITH Version: 1.0b
+ -Fixed an issue where players were made server operators on Join.
+ -Fixed error message formatting with some commands
+ -Modified the behavior of /sudo. Sudo is now disabled every time the player logs in.
+ -Made the default syntax of the /whoami command /me.
+ -You can no longer pay yourself if you are not in /sudo mode.
+ -Auto-complete no longer suggests your own player name in any command
+
+Version 1.0b --- N/A
+ - Initial Release
