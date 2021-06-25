@@ -1,5 +1,0 @@
-13B
-
-
-//Latest supported version to upgrade to, from 12B.
-//The newest compatible version to upgrade to is located in this directory as "VanillaEconomy.jar"
